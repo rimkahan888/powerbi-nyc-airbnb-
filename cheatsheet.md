@@ -41,4 +41,20 @@
    - Y-axis: `reviews_per_month` (Sum).  
    - Title: "Total Reviews by Month".  
 
+#### **4️⃣ Horizontal Bar Charts**  
+1. **Total Bookings by Neighborhood Group**  
+   - Y-axis: `neighbourhood_group`.  
+   - X-axis: `name` (Count).  
+   - Title: "Total Bookings by Neighborhood Group".  
+
+2. **Avg. Price by Neighborhood**  
+   - Y-axis: `neighbourhood`.  
+   - X-axis: `price` (Average).  
+   - Format: Currency ($), 2 decimal places.  
+
+3. **Top 10 Hosts by Total Reviews**  
+   - Y-axis: `host_name`.  
+   - X-axis: `number_of_reviews` (Sum).  
+   - Filter: Top 10 by `number_of_reviews`.  
+
 
