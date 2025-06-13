@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard Cheat Sheet: NYC Airbnb Analysis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #FF5A60;
+            text-align: center;
+            border-bottom: 2px solid #FF5A60;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #FF5A60;
+            margin-top: 25px;
+            border-left: 4px solid #FF5A60;
+            padding-left: 10px;
+        }
+        .section {
+            background-color: white;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tip {
+            background-color: #FFF3E0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #FF5A60;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        .highlight {
+            background-color: #FFEBEE;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Power BI Dashboard Cheat Sheet: NYC Airbnb Analysis</h1>
+
+    <div class="section">
+        <h2><span class="emoji">📌</span> Data Overview</h2>
+        <p><strong>Dataset:</strong> NYC Airbnb listings (16 columns)</p>
+        <p><strong>Key fields:</strong> neighborhood_group, room_type, price, reviews_per_month, last_review, host_id, host_name.</p>
+        <p><strong>Source:</strong> CSV file (link in video description).</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">🚀</span> Step-by-Step Dashboard Creation</h2>
+
+        <h3>1️⃣ Set Up the Canvas</h3>
+        <p><strong>Background:</strong></p>
+        <ul>
+            <li>Canvas background → Hex: <span class="highlight">#FF5A60</span>, Transparency: 0%.</li>
+        </ul>
+
+        <p><strong>Filters (Slicers):</strong></p>
+        <ul>
+            <li>Add two slicers:
+                <ul>
+                    <li>neighborhood_group (dropdown)</li>
+                    <li>room_type (checkbox: "Entire home", "Private room", "Shared room")</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><strong>Formatting:</strong></p>
+        <ul>
+            <li>Background: White</li>
+            <li>Border: White, 20% transparency.</li>
+        </ul>
+
+        <h3>2️⃣ Create Cards (KPIs)</h3>
+        <p><strong>Cards to Add:</strong></p>
+        <ul>
+            <li>Avg. reviews/month → reviews_per_month (Average)</li>
+            <li>Total reviews → number_of_reviews (Sum)</li>
+            <li># Neighborhoods → neighbourhood (Count Distinct)</li>
+            <li>Total hosts → host_id (Count Distinct)</li>
+        </ul>
+
+        <p><strong>Formatting:</strong></p>
+        <ul>
+            <li>Text: White</li>
+            <li>Background: Match dashboard theme</li>
+        </ul>
+
+        <h3>3️⃣ Vertical Bar Charts</h3>
+        <p><strong>Total Last Reviews by Year</strong></p>
+        <ul>
+            <li>X-axis: last_review (Year)</li>
+            <li>Y-axis: last_review (Count)</li>
+            <li>Title: "Total Last Reviews by Year"</li>
+        </ul>
+
+        <p><strong>Total Reviews by Month</strong></p>
+        <ul>
+            <li>X-axis: last_review (Month)</li>
+            <li>Y-axis: reviews_per_month (Sum)</li>
+            <li>Title: "Total Reviews by Month"</li>
+        </ul>
+
+        <h3>4️⃣ Horizontal Bar Charts</h3>
+        <p><strong>Total Bookings by Neighborhood Group</strong></p>
+        <ul>
+            <li>Y-axis: neighbourhood_group</li>
+            <li>X-axis: name (Count)</li>
+            <li>Title: "Total Bookings by Neighborhood Group"</li>
+        </ul>
+
+        <p><strong>Avg. Price by Neighborhood</strong></p>
+        <ul>
+            <li>Y-axis: neighbourhood</li>
+            <li>X-axis: price (Average)</li>
+            <li>Format: Currency ($), 2 decimal places</li>
+        </ul>
+
+        <p><strong>Top 10 Hosts by Total Reviews</strong></p>
+        <ul>
+            <li>Y-axis: host_name</li>
+            <li>X-axis: number_of_reviews (Sum)</li>
+            <li>Filter: Top 10 by number_of_reviews</li>
+        </ul>
+
+        <h3>5️⃣ Donut Chart</h3>
+        <p><strong>Total Neighborhoods by Group</strong></p>
+        <ul>
+            <li>Category: neighbourhood_group</li>
+            <li>Value: neighbourhood (Count Distinct)</li>
+            <li>Format: Hide legend, show "% of total"</li>
+        </ul>
+
+        <h3>6️⃣ Tables (Matrix Visuals)</h3>
+        <p><strong>Avg. Price by Neighborhood Group & Room Type</strong></p>
+        <ul>
+            <li>Rows: neighbourhood_group</li>
+            <li>Columns: room_type</li>
+            <li>Values: price (Average)</li>
+        </ul>
+
+        <p><strong>Avg. Reviews by Month, Group & Room Type</strong></p>
+        <ul>
+            <li>Rows: neighbourhood_group</li>
+            <li>Columns: room_type</li>
+            <li>Values: reviews_per_month (Average)</li>
+        </ul>
+
+        <h3>7️⃣ Final Touches</h3>
+        <ul>
+            <li>Logo: Add NYC Airbnb logo (link in description)</li>
+            <li>Gridlines: Remove for cleaner visuals</li>
+            <li>Titles: Bold, centered, white text</li>
+        </ul>
+    </div>
+
+    <div class="tip">
+        <h2><span class="emoji">⚡</span> Pro Tips</h2>
+        <ul>
+            <li><strong>Consistency:</strong> Use the same color scheme (#FF5A60 for accents, white text)</li>
+            <li><strong>Interactivity:</strong> Test filters to ensure all visuals update dynamically</li>
+            <li><strong>Performance:</strong> Use "Count Distinct" for unique values (e.g., hosts, neighborhoods)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="emoji">📋</span> Quick Reference</h2>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Fields</th>
+                <th>Visual Type</th>
+            </tr>
+            <tr>
+                <td>Filters</td>
+                <td>neighborhood_group, room_type</td>
+                <td>Slicer (Dropdown)</td>
+            </tr>
+            <tr>
+                <td>Cards</td>
+                <td>reviews_per_month, host_id</td>
+                <td>Card</td>
+            </tr>
+            <tr>
+                <td>Vertical Bars</td>
+                <td>last_review (Year/Month)</td>
+                <td>Column Chart</td>
+            </tr>
+            <tr>
+                <td>Horizontal Bars</td>
+                <td>neighbourhood, price</td>
+                <td>Bar Chart</td>
+            </tr>
+            <tr>
+                <td>Donut Chart</td>
+                <td>neighbourhood_group</td>
+                <td>Donut Chart</td>
+            </tr>
+            <tr>
+                <td>Tables</td>
+                <td>room_type, price</td>
+                <td>Matrix</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="tip">
+        <h2><span class="emoji">🎯</span> Done!</h2>
+        <p>Your interactive NYC Airbnb dashboard is ready. Use this cheat sheet to recreate it quickly!</p>
+        <p><strong>TL;DR:</strong> Follow these steps: Filters → Cards → Vertical/Horizontal Bars → Donut → Tables. Match formatting for a polished look. Video tutorial linked for details!</p>
+    </div>
+</body>
+</html>
