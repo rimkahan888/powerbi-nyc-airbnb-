@@ -20,3 +20,25 @@
     - Background: White  
     - Border: White, 20% transparency.  
 
+#### **2️⃣ Create Cards (KPIs)**  
+- **Cards to Add:**  
+  1. **Avg. reviews/month** → `reviews_per_month` (Average).  
+  2. **Total reviews** → `number_of_reviews` (Sum).  
+  3. **# Neighborhoods** → `neighbourhood` (Count Distinct).  
+  4. **Total hosts** → `host_id` (Count Distinct).  
+- **Formatting:**  
+  - Text: White  
+  - Background: Match dashboard theme.  
+
+#### **3️⃣ Vertical Bar Charts**  
+1. **Total Last Reviews by Year**  
+   - X-axis: `last_review` (Year).  
+   - Y-axis: `last_review` (Count).  
+   - Title: "Total Last Reviews by Year".  
+
+2. **Total Reviews by Month**  
+   - X-axis: `last_review` (Month).  
+   - Y-axis: `reviews_per_month` (Sum).  
+   - Title: "Total Reviews by Month".  
+
+
