@@ -82,3 +82,24 @@
 
 ---
 
+### **⚡ Pro Tips**  
+- **Consistency:** Use the same color scheme (`#FF5A60` for accents, white text).  
+- **Interactivity:** Test filters to ensure all visuals update dynamically.  
+- **Performance:** Use "Count Distinct" for unique values (e.g., hosts, neighborhoods).  
+
+---
+
+### **📋 Quick Reference**  
+| **Component**       | **Fields**                          | **Visual Type**       |  
+|----------------------|-------------------------------------|-----------------------|  
+| Filters              | `neighbourhood_group`, `room_type` | Slicer (Dropdown)     |  
+| Cards                | `reviews_per_month`, `host_id`      | Card                  |  
+| Vertical Bars        | `last_review` (Year/Month)          | Column Chart          |  
+| Horizontal Bars      | `neighbourhood`, `price`            | Bar Chart             |  
+| Donut Chart          | `neighbourhood_group`              | Donut Chart           |  
+| Tables               | `room_type`, `price`                | Matrix                |  
+
+**🎯 Done!** Your interactive NYC Airbnb dashboard is ready. Use this cheat sheet to recreate it quickly!  
+
+---  
+**TL;DR:** Follow these steps: **Filters → Cards → Vertical/Horizontal Bars → Donut → Tables**. Match formatting for a polished look. Video tutorial linked for details!
