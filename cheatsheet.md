@@ -58,3 +58,27 @@
    - Filter: Top 10 by `number_of_reviews`.  
 
 
+#### **5️⃣ Donut Chart**  
+- **Total Neighborhoods by Group**  
+  - Category: `neighbourhood_group`.  
+  - Value: `neighbourhood` (Count Distinct).  
+  - Format: Hide legend, show "% of total".  
+
+#### **6️⃣ Tables (Matrix Visuals)**  
+1. **Avg. Price by Neighborhood Group & Room Type**  
+   - Rows: `neighbourhood_group`.  
+   - Columns: `room_type`.  
+   - Values: `price` (Average).  
+
+2. **Avg. Reviews by Month, Group & Room Type**  
+   - Rows: `neighbourhood_group`.  
+   - Columns: `room_type`.  
+   - Values: `reviews_per_month` (Average).  
+
+#### **7️⃣ Final Touches**  
+- **Logo:** Add NYC Airbnb logo (link in description).  
+- **Gridlines:** Remove for cleaner visuals.  
+- **Titles:** Bold, centered, white text.  
+
+---
+
